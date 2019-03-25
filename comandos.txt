@@ -4,3 +4,5 @@ composer create-project --prefer-dist laravel/laravel nombre_proyecto
 php artisan migrate
 //modelo
 php artisan make:model Empleados -mcr
+//ver rutas
+php artisan route:list
