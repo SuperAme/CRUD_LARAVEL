@@ -1,0 +1,6 @@
+//crear proyecto con composer
+composer create-project --prefer-dist laravel/laravel nombre_proyecto
+//migraciones
+php artisan migrate
+//modelo
+php artisan make:model Empleados -mcr
