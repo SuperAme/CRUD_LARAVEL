@@ -6,3 +6,6 @@ php artisan migrate
 php artisan make:model Empleados -mcr
 //ver rutas
 php artisan route:list
+//enlace a fotografias
+php artisan storage:link
+
