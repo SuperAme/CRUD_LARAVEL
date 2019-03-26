@@ -1,3 +1,4 @@
+<a href="{{url('empleados/create')}}">Agregar Empleado</a>
 <table class="table table-light">
     <thead class="thead-light">
         <tr>

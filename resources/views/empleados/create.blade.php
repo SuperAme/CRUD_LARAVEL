@@ -16,4 +16,5 @@
     <input type="file" name="Foto" id="Foto" value="">
 
     <input type="submit" value="agregar">
+    <a href="{{url('empleados')}}">Regresar</a>
 </form>

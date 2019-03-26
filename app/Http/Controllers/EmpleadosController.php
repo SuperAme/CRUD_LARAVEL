@@ -43,7 +43,8 @@ class EmpleadosController extends Controller
             $datos_empleado['Foto']=$request->file('Foto')->store('uploads','public');
         }
         Empleados::insert($datos_empleado);
-        return response()->json($datos_empleado);
+        //return response()->json($datos_empleado);
+        return redirect('empleados');
     }
 
     /**
@@ -100,6 +101,12 @@ class EmpleadosController extends Controller
      */
     public function destroy($id)
     {
+        $empleado = Empleados::findOrFail($id);
+
+        if(Storage::delete('public/'.$empleado->Foto)){
+            Empleados::destroy($id);
+        }
+        
         Empleados::destroy($id);
         return redirect('empleados');
     }
