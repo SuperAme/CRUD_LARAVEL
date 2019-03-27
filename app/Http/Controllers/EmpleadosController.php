@@ -44,7 +44,7 @@ class EmpleadosController extends Controller
         }
         Empleados::insert($datos_empleado);
         //return response()->json($datos_empleado);
-        return redirect('empleados');
+        return redirect('empleados')->with('Mensaje','Empleado agregado con éxito');
     }
 
     /**
@@ -89,8 +89,9 @@ class EmpleadosController extends Controller
         
         Empleados::where('id','=',$id)->update($datos_empleado);
 
-        $empleado = Empleados::findOrFail($id);
-        return view('empleados.edit',compact('empleado'));
+        /*$empleado = Empleados::findOrFail($id);
+        return view('empleados.edit',compact('empleado'));*/
+        return redirect('empleados')->with('Mensaje','Empleado modificado con éxito');
     }
 
     /**
@@ -107,7 +108,8 @@ class EmpleadosController extends Controller
             Empleados::destroy($id);
         }
         
-        Empleados::destroy($id);
-        return redirect('empleados');
+        /*Empleados::destroy($id);
+        return redirect('empleados');*/
+        return redirect('empleados')->with('Mensaje','Empleado eliminado con éxito');
     }
 }
