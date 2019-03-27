@@ -9,7 +9,7 @@
 <a href="{{url('empleados/create')}}" class="btn btn-success">Agregar Empleado</a>
 <br/>
 <br/>
-<table class="table table-light">
+<table class="table table-light table-hover">
     <thead class="thead-light">
         <tr>
             <th>#</th>
