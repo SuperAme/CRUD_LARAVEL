@@ -6,15 +6,15 @@
     Session::get('Mensaje')
 }}
 @endif
-<a href="{{url('empleados/create')}}">Agregar Empleado</a>
+<a href="{{url('empleados/create')}}" class="btn btn-success">Agregar Empleado</a>
+<br/>
+<br/>
 <table class="table table-light">
     <thead class="thead-light">
         <tr>
             <th>#</th>
             <th>Foto</th>
-            <th>Nombre</th>
-            <th>Apellido Paterno</th>
-            <th>Apellido Materno</th>
+            <th>Nombre</th>            
             <th>Correo</th>
             <th>Acciones</th>
         </tr>
@@ -24,20 +24,18 @@
         <tr>
             <td>{{$loop->iteration}}</td>
             <td>
-                <img src="{{asset('storage').'/'.$empleado->Foto}}" alt="" width="200">
+                <img src="{{asset('storage').'/'.$empleado->Foto}}" class="img-thumbnail img-fluid" alt="" width="100">
                 
             </td>
-            <td>{{$empleado->Nombre}}</td>
-            <td>{{$empleado->ApellidoPaterno}}</td>
-            <td>{{$empleado->ApellidoMaterno}}</td>
+            <td>{{$empleado->Nombre}} {{$empleado->ApellidoPaterno}} {{$empleado->ApellidoMaterno}}</td>            
             <td>{{$empleado->Correo}}</td>
             <td>
-            <a href="{{url('empleados/'.$empleado->id.'/edit')}}">Editar</a>
+            <a href="{{url('empleados/'.$empleado->id.'/edit')}}" class="btn btn-warning">Editar</a>
             | 
-                <form method="post" action="{{url('/empleados/'.$empleado->id)}}">
+                <form method="post" action="{{url('/empleados/'.$empleado->id)}}" style="display:inline">
                     {{csrf_field()}}
                     {{method_field('DELETE')}}
-                    <button type="submit" onclick="return confirm('Deseas Borrar?');">Borrar</button>
+                    <button class="btn btn-danger" type="submit" onclick="return confirm('Deseas Borrar?');">Borrar</button>
                 </form>
             </td>
         </tr>
