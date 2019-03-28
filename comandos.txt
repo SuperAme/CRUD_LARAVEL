@@ -11,3 +11,6 @@ php artisan storage:link
 //crear autenticacion
 php artisan make:auth
 
+//generador de crud
+https://github.com/appzcoder/crud-generator
+
